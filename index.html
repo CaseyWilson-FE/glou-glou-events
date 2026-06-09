@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Events &amp; Venue Hire | Glou Glou Wellington</title>
+  <meta name="description" content="Private events and venue hire at Glou Glou, Wellington. Three distinct spaces. Intimate wine dinners to 300-guest celebrations in the heart of the Courtenay Precinct.">
+
+  <style>
+    /* =====================
+       FONTS
+       Add Alti-Regular.woff2 + .woff and Galvji.woff2 + .woff
+       to the /fonts/ folder alongside this file.
+    ===================== */
+    @font-face {
+      font-family: 'Alti';
+      src: url('./fonts/Alti-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Galvji';
+      src: url('./fonts/galvji.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Galvji';
+      src: url('./fonts/galvji-oblique.ttf') format('truetype');
+      font-weight: 400;
+      font-style: oblique;
+      font-display: swap;
+    }
+
+    /* =====================
+       BRAND VARIABLES
+    ===================== */
+    :root {
+      --navy:      #0D233B;
+      --navy-mid:  #1A3A5C;
+      --navy-deep: #081829;
+      --cream:     #EAE2CD;
+      --cream-dk:  #D8D0B8;
+      --white:     #FFFFFF;
+      --text:      #1A1A1A;
+      --muted:     #5A5A5A;
+      --hairline:  rgba(0,0,0,0.1);
+
+      --serif: 'Alti', Georgia, 'Times New Roman', serif;
+      --sans:  'Galvji', system-ui, -apple-system, sans-serif;
+    }
+
+    /* =====================
+       RESET & BASE
+    ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--cream);
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; }
+    h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.15; font-weight: 400; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 88px 0; }
+    @media (max-width: 768px) { section { padding: 60px 0; } }
+
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    /* =====================
+       NAV
+    ===================== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .nav.scrolled {
+      background: var(--navy-deep);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.35);
+    }
+
+    .nav-logo { text-decoration: none; color: var(--white); }
+    .nav-logo-name { font-family: var(--serif); font-size: 20px; display: block; letter-spacing: 0.04em; }
+    .nav-logo-sub { font-family: var(--sans); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.55; display: block; margin-top: -2px; }
+
+    .nav-btn {
+      background: var(--white);
+      color: var(--navy);
+      padding: 10px 22px;
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 1px;
+      transition: background 0.2s;
+    }
+
+    .nav-btn:hover { background: var(--cream); }
+
+    /* =====================
+       HERO
+    ===================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--navy-deep);
+      overflow: hidden;
+    }
+
+    /* hero.jpg = four women standing with wine glasses, navy curtains */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-color: var(--navy-deep);
+      background-image: url('./Images/hero.jpg');
+      background-size: cover;
+      background-position: center 40%;
+      opacity: 0.45;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: var(--white);
+      padding: 130px 24px 80px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6.5vw, 76px);
+      color: var(--white);
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 em { font-style: italic; color: rgba(255,255,255,0.75); }
+
+    .hero-sub {
+      font-family: var(--sans);
+      font-size: 18px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+      max-width: 500px;
+      margin: 0 auto 48px;
+    }
+
+    .btn-white {
+      display: inline-block;
+      background: var(--white);
+      color: var(--navy);
+      padding: 16px 42px;
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 1px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-white:hover { background: var(--cream); transform: translateY(-2px); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.3);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-scroll::after {
+      content: '';
+      width: 1px;
+      height: 36px;
+      background: rgba(255,255,255,0.2);
+      animation: line-pulse 2.4s ease infinite;
+    }
+
+    @keyframes line-pulse {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.7; }
+    }
+
+    /* =====================
+       PAIN
+    ===================== */
+    .pain { background: var(--cream); text-align: center; }
+    .pain .eyebrow { color: var(--navy); }
+
+    .pain h2 {
+      font-size: clamp(28px, 3.8vw, 46px);
+      color: var(--navy);
+      max-width: 660px;
+      margin: 0 auto 22px;
+    }
+
+    .pain-lead {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 580px;
+      margin: 0 auto 48px;
+      line-height: 1.75;
+    }
+
+    .pain-three {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    @media (max-width: 768px) { .pain-three { grid-template-columns: 1fr; gap: 16px; } }
+
+    .pain-card {
+      background: var(--white);
+      padding: 32px 28px;
+      border-top: 2px solid var(--navy);
+    }
+
+    .pain-card-title {
+      font-family: var(--sans);
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .pain-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    /* =====================
+       THREE VENUES (NAVY)
+    ===================== */
+    .three-venues { background: var(--navy); }
+
+    .three-venues-header { text-align: center; margin-bottom: 56px; }
+    .three-venues-header .eyebrow { color: rgba(255,255,255,0.35); }
+    .three-venues-header h2 { font-size: clamp(28px, 4vw, 50px); color: var(--white); }
+
+    .venue-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    @media (max-width: 900px) { .venue-cards { grid-template-columns: 1fr; } }
+
+    .vc {
+      background: rgba(255,255,255,0.05);
+      padding: 48px 36px;
+      border-top: 2px solid rgba(255,255,255,0.2);
+      transition: background 0.2s;
+    }
+
+    .vc.featured {
+      background: rgba(255,255,255,0.1);
+      border-top-color: var(--white);
+    }
+
+    .vc:hover { background: rgba(255,255,255,0.09); }
+    .vc.featured:hover { background: rgba(255,255,255,0.14); }
+
+    .vc-num {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.25);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .vc.featured .vc-num { color: rgba(255,255,255,0.5); }
+
+    .vc h3 { font-size: 28px; color: var(--white); margin-bottom: 4px; }
+
+    .vc-cap {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 20px;
+    }
+
+    .vc.featured .vc-cap { color: rgba(255,255,255,0.65); }
+
+    .vc p { font-size: 15px; line-height: 1.72; color: rgba(255,255,255,0.62); margin-bottom: 26px; }
+
+    .vc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .vc-tag {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      padding: 5px 12px;
+      border: 1px solid rgba(255,255,255,0.16);
+      color: rgba(255,255,255,0.45);
+      border-radius: 1px;
+    }
+
+    .vc.featured .vc-tag { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.65); }
+
+    /* =====================
+       ACCORDION SECTION
+    ===================== */
+    .offerings { background: var(--cream-dk); }
+
+    .offerings-header { text-align: center; margin-bottom: 56px; }
+    .offerings-header .eyebrow { color: var(--navy); }
+    .offerings-header h2 { font-size: clamp(28px, 3.8vw, 46px); color: var(--navy); margin-bottom: 12px; }
+    .offerings-header p { font-size: 16px; color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    .acc-wrap { max-width: 900px; margin: 0 auto; }
+
+    .acc-item {
+      background: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .acc-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 28px 36px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+    }
+
+    @media (max-width: 600px) { .acc-btn { padding: 22px 24px; } }
+
+    .acc-btn-left { display: flex; flex-direction: column; gap: 3px; }
+
+    .acc-btn-cap {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(13,35,59,0.45);
+    }
+
+    .acc-btn-title {
+      font-family: var(--serif);
+      font-size: 24px;
+      color: var(--navy);
+    }
+
+    .acc-item.featured .acc-btn-title { font-size: 26px; }
+
+    .acc-icon {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(13,35,59,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--navy);
+      transition: transform 0.25s, background 0.2s;
+    }
+
+    .acc-item.open .acc-icon { transform: rotate(45deg); background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+    .acc-body {
+      display: none;
+      padding: 0 36px 40px;
+    }
+
+    @media (max-width: 600px) { .acc-body { padding: 0 24px 32px; } }
+
+    .acc-item.open .acc-body { display: block; }
+
+    /* Banner image inside accordion */
+    .acc-banner {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 600px) { .acc-banner { height: 220px; } }
+
+    /* Separator inside accordion */
+    .acc-sep {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(13,35,59,0.4);
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--hairline);
+      margin-bottom: 20px;
+      margin-top: 32px;
+    }
+
+    .acc-sep:first-child { margin-top: 0; }
+
+    /* Prominent package section heading (Penthouse) */
+    .acc-pkg-heading {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: var(--navy);
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--navy);
+    }
+
+    .acc-pkg-heading:first-of-type { margin-top: 0; }
+
+    /* Package grid inside accordion */
+    .acc-pkg-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 640px) { .acc-pkg-grid { grid-template-columns: 1fr; } }
+
+    .acc-pkg {
+      background: var(--cream);
+      padding: 24px 22px;
+    }
+
+    .acc-pkg.featured { background: var(--navy); color: var(--white); }
+
+    .acc-pkg-name {
+      font-family: var(--serif);
+      font-size: 20px;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .acc-pkg.featured .acc-pkg-name { color: var(--white); }
+
+    .acc-pkg-dur {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 16px;
+    }
+
+    .acc-pkg.featured .acc-pkg-dur { color: rgba(255,255,255,0.45); }
+
+    .acc-pkg-list {
+      list-style: none;
+      font-size: 14px;
+      line-height: 2;
+      color: var(--muted);
+    }
+
+    .acc-pkg.featured .acc-pkg-list { color: rgba(255,255,255,0.72); }
+
+    .acc-pkg-list li { padding-left: 16px; position: relative; }
+    .acc-pkg-list li::before { content: '·'; position: absolute; left: 0; color: rgba(13,35,59,0.35); }
+    .acc-pkg.featured .acc-pkg-list li::before { color: rgba(255,255,255,0.4); }
+
+    /* Duration cards (mix & mingle / snacks & drinks) */
+    .acc-dur-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 640px) { .acc-dur-grid { grid-template-columns: 1fr; } }
+
+    .acc-dur-card {
+      background: var(--cream);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .acc-dur-time {
+      font-family: var(--serif);
+      font-size: 26px;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .acc-dur-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(13,35,59,0.45);
+    }
+
+    /* Inline features list */
+    .acc-features {
+      list-style: none;
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .acc-features li { padding-left: 18px; position: relative; }
+    .acc-features li::before { content: '·'; position: absolute; left: 0; color: rgba(13,35,59,0.35); }
+
+    /* Addon bar */
+    .acc-addon {
+      background: var(--cream);
+      padding: 18px 22px;
+      margin-top: 12px;
+    }
+
+    .acc-addon-label {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+
+    .acc-addon-desc { font-size: 13px; color: var(--muted); }
+
+    /* Entertainment chips */
+    .ent-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+    .ent-chip {
+      font-family: var(--sans);
+      font-size: 13px;
+      padding: 7px 16px;
+      background: var(--cream);
+      color: var(--navy);
+      border: 1px solid var(--hairline);
+    }
+
+    /* Venue hire / callout bar */
+    .acc-callout {
+      background: var(--navy);
+      color: var(--white);
+      padding: 22px 28px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .acc-callout strong { display: block; font-family: var(--serif); font-size: 19px; margin-bottom: 3px; }
+    .acc-callout span { font-size: 13px; color: rgba(255,255,255,0.6); }
+
+    .btn-enquire-sm {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 10px 22px;
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 1px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-enquire-sm:hover { background: rgba(255,255,255,0.2); }
+
+    .acc-note { font-size: 14px; color: var(--muted); margin-top: 12px; line-height: 1.65; }
+
+    /* =====================
+       FOOD SECTION
+    ===================== */
+    .food { background: var(--navy); color: var(--white); }
+
+    .food-header { text-align: center; margin-bottom: 60px; }
+    .food-header .eyebrow { color: rgba(255,255,255,0.35); }
+    .food-header h2 { font-size: clamp(28px, 3.8vw, 46px); color: var(--white); margin-bottom: 12px; }
+    .food-header p { font-size: 16px; color: rgba(255,255,255,0.58); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    .food-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    @media (max-width: 768px) { .food-cols { grid-template-columns: 1fr; gap: 40px; } }
+
+    .food-col-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .food-col-sub {
+      font-family: var(--sans);
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.04em;
+      margin-top: -12px;
+      margin-bottom: 20px;
+    }
+
+    .food-items { display: flex; flex-direction: column; gap: 14px; }
+
+    .food-item-name {
+      font-family: var(--sans);
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.85);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .food-item-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+    .food-item-tags { display: inline-flex; gap: 4px; margin-left: 6px; }
+
+    .food-tag { font-size: 10px; letter-spacing: 0.04em; color: rgba(255,255,255,0.4); font-style: italic; }
+
+    .food-note {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.7;
+    }
+
+    /* =====================
+       PROCESS
+    ===================== */
+    .process { background: var(--navy-deep); color: var(--white); text-align: center; }
+    .process .eyebrow { color: rgba(255,255,255,0.35); }
+    .process h2 { font-size: clamp(28px, 3.8vw, 46px); margin-bottom: 12px; }
+    .process-sub { font-size: 17px; color: rgba(255,255,255,0.55); margin-bottom: 64px; }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) { .process-steps { grid-template-columns: repeat(2, 1fr); gap: 28px; } }
+    @media (max-width: 420px) { .process-steps { grid-template-columns: 1fr; } }
+
+    .step-n { font-family: var(--serif); font-size: 56px; color: rgba(255,255,255,0.45); line-height: 1; margin-bottom: 14px; }
+    .step-title { font-family: var(--sans); font-size: 14px; letter-spacing: 0.04em; color: var(--white); margin-bottom: 8px; }
+    .step-desc { font-size: 14px; line-height: 1.65; color: rgba(255,255,255,0.45); }
+
+    /* =====================
+       SOCIAL PROOF
+    ===================== */
+    .proof { background: var(--cream-dk); }
+
+    .proof h2 { font-size: clamp(26px, 3.5vw, 42px); color: var(--navy); text-align: center; margin-bottom: 48px; }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) { .proof-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+
+    .proof-placeholder {
+      background: rgba(0,0,0,0.04);
+      border: 2px dashed rgba(0,0,0,0.1);
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      text-align: center;
+      gap: 10px;
+    }
+
+    .proof-placeholder .ph-icon { font-size: 22px; opacity: 0.35; }
+    .proof-placeholder p { font-family: var(--sans); font-size: 13px; color: #aaa; font-style: italic; line-height: 1.6; }
+
+    /* =====================
+       FAQ
+    ===================== */
+    .faq { background: var(--cream); }
+
+    .faq h2 { font-size: clamp(26px, 3.5vw, 42px); color: var(--navy); text-align: center; margin-bottom: 52px; }
+
+    .faq-wrap { max-width: 720px; margin: 0 auto; }
+
+    .faq-item { border-bottom: 1px solid var(--hairline); }
+
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 20px 0;
+      font-family: var(--sans);
+      font-size: 15px;
+      color: var(--navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .faq-q::after {
+      content: '+';
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--navy);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+      line-height: 1;
+      opacity: 0.45;
+    }
+
+    .faq-item.open .faq-q::after { transform: rotate(45deg); opacity: 1; }
+
+    .faq-a { display: none; padding-bottom: 22px; font-size: 15px; line-height: 1.75; color: var(--muted); }
+    .faq-item.open .faq-a { display: block; }
+
+    /* =====================
+       ENQUIRY FORM
+    ===================== */
+    .enquire { background: var(--navy); color: var(--white); }
+
+    .enquire-header { text-align: center; margin-bottom: 52px; }
+    .enquire-header .eyebrow { color: rgba(255,255,255,0.35); }
+    .enquire-header h2 { font-size: clamp(28px, 4vw, 48px); margin-bottom: 12px; }
+    .enquire-header p { font-size: 17px; color: rgba(255,255,255,0.58); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+
+    .enquire .container { max-width: 700px; }
+
+    form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) { form { grid-template-columns: 1fr; } }
+
+    .fg { display: flex; flex-direction: column; gap: 6px; }
+    .fg.full { grid-column: 1 / -1; }
+
+    label {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: var(--white);
+      padding: 14px 16px;
+      font-size: 15px;
+      font-family: var(--sans);
+      border-radius: 1px;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      -webkit-appearance: none;
+    }
+
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.25); }
+    select { cursor: pointer; }
+    select option { background: var(--navy); color: var(--white); }
+    input:focus, select:focus, textarea:focus { border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.1); }
+    textarea { resize: vertical; min-height: 120px; }
+
+    .form-cta { grid-column: 1 / -1; text-align: center; margin-top: 8px; }
+
+    .btn-submit {
+      background: var(--white);
+      color: var(--navy);
+      border: none;
+      padding: 16px 52px;
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 1px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-submit:hover { background: var(--cream); transform: translateY(-2px); }
+
+    .form-note { grid-column: 1 / -1; text-align: center; font-size: 13px; color: rgba(255,255,255,0.3); margin-top: 12px; }
+    .form-note a { color: rgba(255,255,255,0.5); text-decoration: underline; }
+
+    #form-success { display: none; text-align: center; padding: 52px 24px; }
+    #form-success h3 { font-size: 34px; margin-bottom: 12px; }
+    #form-success p { font-size: 17px; color: rgba(255,255,255,0.6); }
+
+    /* =====================
+       FOOTER
+    ===================== */
+    footer {
+      background: #111;
+      color: rgba(255,255,255,0.38);
+      padding: 44px 24px;
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 14px;
+    }
+
+    .footer-name { font-family: var(--serif); font-size: 22px; color: rgba(255,255,255,0.85); margin-bottom: 6px; }
+
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin: 16px 0; }
+    .footer-links a { color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+    /* =====================
+       PHOTO GALLERY
+    ===================== */
+    .gallery { background: var(--navy-deep); padding: 4px 0 0; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 320px 320px;
+      gap: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 240px);
+      }
+      /* hide 6th photo on mobile to keep even grid */
+      .g6 { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 180px);
+      }
+    }
+
+    .g-photo {
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Row 1: landscape | portrait | landscape */
+    .g1 { background-position: center 40%; }   /* event-guests landscape */
+    .g2 { background-position: center 30%; }   /* interior-bar portrait */
+    .g3 { background-position: center 50%; }   /* food-arancini landscape */
+
+    /* Row 2: portrait | landscape | portrait */
+    .g4 { background-position: center 35%; }   /* drinks-clink portrait */
+    .g5 { background-position: center 40%; }   /* kitchen landscape */
+    .g6 { background-position: center 30%; }   /* interior-dining landscape */
+
+    /* =====================
+       MOBILE STICKY CTA
+    ===================== */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 99;
+      background: var(--navy-deep);
+      padding: 15px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    @media (max-width: 768px) { .sticky-cta { display: block; } }
+    .sticky-cta a { color: var(--white); font-family: var(--sans); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; }
+    @media (max-width: 768px) { body { padding-bottom: 54px; } }
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <a href="https://www.glouglou.nz" class="nav-logo">
+    <span class="nav-logo-name">Glou Glou</span>
+    <span class="nav-logo-sub">Private Events</span>
+  </a>
+  <a href="#enquire" class="nav-btn">Enquire now</a>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Private Events &amp; Venue Hire · Wellington</p>
+    <h1>Your people.<br><em>Your night.</em></h1>
+    <p class="hero-sub">Three distinct spaces in Wellington's Courtenay Precinct. Intimate wine dinners to 300-guest celebrations.</p>
+    <a href="#enquire" class="btn-white">Tell us about your event</a>
+  </div>
+</section>
+
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="container">
+    <span class="eyebrow">Why Glou Glou</span>
+    <h2>Somewhere people already love, yours for the night.</h2>
+    <div class="pain-three">
+      <div class="pain-card">
+        <div class="pain-card-title">Reserved for your group</div>
+        <p>When you book Glou Glou or The Atrium, that space is yours for the night. The two venues are connected and share access. Book both for full exclusivity, or book one and we'll make sure your event feels entirely its own.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card-title">Food and wine, sorted</div>
+        <p>Our kitchen provides everything. Sharing plates, canapes and even desserts with a full bar service throughout. All in-house and all tailored to your event.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card-title">Right-sized for your group</div>
+        <p>Three spaces means six guests or 300 guests both get the same care. Intimate dinner or full company celebration. Neither ends up in a room that's too big or too small.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- THREE VENUES — Glou Glou highlighted as #01 -->
+<section class="three-venues">
+  <div class="container">
+    <div class="three-venues-header">
+      <span class="eyebrow">The spaces</span>
+      <h2>Three distinct spaces.</h2>
+    </div>
+    <div class="venue-cards">
+
+      <!-- 01 Glou Glou — featured -->
+      <div class="vc featured">
+        <div class="vc-num">01 · Our signature space</div>
+        <h3>Glou Glou</h3>
+        <p class="vc-cap">Up to 70 guests</p>
+        <p>The full Glou Glou experience. The bar, the kitchen, the whole floor, exclusively for your group. You already love it. Imagine having it all to yourselves.</p>
+        <div class="vc-tags">
+          <span class="vc-tag">End-of-year functions</span>
+          <span class="vc-tag">Product launches</span>
+          <span class="vc-tag">Milestone birthdays</span>
+          <span class="vc-tag">Networking</span>
+        </div>
+      </div>
+
+      <!-- 02 Atrium -->
+      <div class="vc">
+        <div class="vc-num">02</div>
+        <h3>The Atrium</h3>
+        <p class="vc-cap">Up to 300 guests</p>
+        <p>Seamlessly connected to Glou Glou, The Atrium brings dramatic scale without losing the warmth. Use it solo, or combine with Glou Glou for a two-zone event that flows.</p>
+        <div class="vc-tags">
+          <span class="vc-tag">Large corporates</span>
+          <span class="vc-tag">Gala dinners</span>
+          <span class="vc-tag">Weddings</span>
+          <span class="vc-tag">Conferences</span>
+        </div>
+      </div>
+
+      <!-- 03 Penthouse -->
+      <div class="vc">
+        <div class="vc-num">03 · Partner venue</div>
+        <h3>The Penthouse</h3>
+        <p class="vc-cap">6 – 50 guests · Off-site</p>
+        <p>A private, elevated setting above the city at our partner venue. Wine-led, unhurried, considered. The place for groups who want more than a restaurant. A night they'll still be talking about.</p>
+        <div class="vc-tags">
+          <span class="vc-tag">Wine journeys</span>
+          <span class="vc-tag">Private dinners</span>
+          <span class="vc-tag">Corporate away-days</span>
+          <span class="vc-tag">Celebrations</span>
+          <span class="vc-tag">Hen parties</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PHOTO GALLERY -->
+<section class="gallery">
+  <div class="gallery-grid">
+    <!-- g1: event-guests.jpg = Photo 7: three women laughing at bar with wine -->
+    <div class="g-photo g1" style="background-image: url('./Images/event-guests.jpg');"></div>
+    <!-- g2: interior-bar.jpg = Photo 2: plant wall with curved wooden bar and barstools -->
+    <div class="g-photo g2" style="background-image: url('./Images/interior-bar.jpg');"></div>
+    <!-- g3: food-arancini.jpg = Photo 3: three hands sharing golden arancini -->
+    <div class="g-photo g3" style="background-image: url('./Images/food-arancini.jpg');"></div>
+    <!-- g4: drinks-clink.jpg = Photo 6: couple clinking espresso martini and white wine -->
+    <div class="g-photo g4" style="background-image: url('./Images/drinks-clink.jpg');"></div>
+    <!-- g5: kitchen-color.jpg = Glou Glou kitchen in colour with plant wall -->
+    <div class="g-photo g5" style="background-image: url('./Images/kitchen-color.jpg');"></div>
+    <!-- g6: interior-dining.jpg = Photo 8: wide restaurant shot with diners (B&W) -->
+    <div class="g-photo g6" style="background-image: url('./Images/interior-dining.jpg');"></div>
+  </div>
+</section>
+
+
+<!-- WHAT'S ON OFFER — ACCORDION -->
+<section class="offerings">
+  <div class="container">
+    <div class="offerings-header">
+      <span class="eyebrow">What's on offer</span>
+      <h2>Choose your space.</h2>
+      <p>Each venue has its own format and inclusions. Expand any space below to see what's available, then enquire and we'll put together a package for your group.</p>
+    </div>
+
+    <div class="acc-wrap">
+
+      <!-- ── GLOU GLOU (open by default) ── -->
+      <div class="acc-item featured open" id="acc-gg">
+        <button class="acc-btn" aria-expanded="true" aria-controls="acc-gg-body">
+          <div class="acc-btn-left">
+            <span class="acc-btn-cap">01 · Our signature space · Up to 70 guests</span>
+            <span class="acc-btn-title">Glou Glou</span>
+          </div>
+          <span class="acc-icon">+</span>
+        </button>
+        <div class="acc-body" id="acc-gg-body">
+
+          <img src="./Images/interior-bar.jpg" alt="Glou Glou" class="acc-banner" style="object-position: center 50%;">
+
+          <div class="acc-sep">Venue formats</div>
+          <div class="acc-dur-grid">
+            <div class="acc-dur-card">
+              <div class="acc-dur-time">Seated</div>
+              <div class="acc-dur-label">Up to 50 guests</div>
+            </div>
+            <div class="acc-dur-card">
+              <div class="acc-dur-time">Standing</div>
+              <div class="acc-dur-label">Up to 70 guests</div>
+            </div>
+            <div class="acc-dur-card">
+              <div class="acc-dur-time">Hybrid</div>
+              <div class="acc-dur-label">Mixed seating and social</div>
+            </div>
+          </div>
+
+          <div class="acc-sep">What's included</div>
+          <ul class="acc-features">
+            <li>The entire venue is yours. No shared spaces, no other guests.</li>
+            <li>Full kitchen and bar service throughout your event</li>
+            <li>Function menu available: sharing plates, canapes and bites</li>
+            <li>Full catering available for larger formats</li>
+            <li>Fully licensed</li>
+            <li>Food and beverage minimum applies. Varies by day and format.</li>
+          </ul>
+
+          <div class="acc-sep">Best for</div>
+          <ul class="acc-features">
+            <li>End-of-year functions and team celebrations</li>
+            <li>Milestone birthdays and private dinners</li>
+            <li>Product launches and brand activations</li>
+            <li>Networking and industry events</li>
+          </ul>
+
+          <div class="acc-callout">
+            <div>
+              <strong>Interested in Glou Glou?</strong>
+              <span>Tell us your date, guest count, and what you have in mind. We'll come back with a tailored proposal.</span>
+            </div>
+            <a href="#enquire" class="btn-enquire-sm">Enquire</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── ATRIUM ── -->
+      <div class="acc-item" id="acc-at">
+        <button class="acc-btn" aria-expanded="false" aria-controls="acc-at-body">
+          <div class="acc-btn-left">
+            <span class="acc-btn-cap">02 · Up to 300 guests</span>
+            <span class="acc-btn-title">The Atrium</span>
+          </div>
+          <span class="acc-icon">+</span>
+        </button>
+        <div class="acc-body" id="acc-at-body">
+
+          <!-- Replace atrium-event.jpg with atrium-stage.jpg once that file is added -->
+          <img src="./Images/atrium-event.jpg" alt="The Atrium" class="acc-banner" style="object-position: center 65%;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px; margin-top:4px; margin-bottom:32px;">
+            <img src="./Images/atrium-canape.jpg" alt="Atrium canape service" style="width:100%; height:180px; object-fit:cover; object-position:center 40%; display:block;">
+            <img src="./Images/atrium-glasses.jpg" alt="Atrium drinks" style="width:100%; height:180px; object-fit:cover; object-position:center 50%; display:block;">
+          </div>
+
+          <div class="acc-sep">Event formats</div>
+          <div class="acc-dur-grid">
+            <div class="acc-dur-card">
+              <div class="acc-dur-time">Seated</div>
+              <div class="acc-dur-label">Long-table dining</div>
+            </div>
+            <div class="acc-dur-card">
+              <div class="acc-dur-time">Standing</div>
+              <div class="acc-dur-label">Up to 300 guests</div>
+            </div>
+            <div class="acc-dur-card">
+              <div class="acc-dur-time">Combined</div>
+              <div class="acc-dur-label">Glou Glou + The Atrium</div>
+            </div>
+          </div>
+
+          <div class="acc-sep">What's included</div>
+          <ul class="acc-features">
+            <li>Full venue hire of The Atrium</li>
+            <li>Food and beverage packages available</li>
+            <li>Full catering available</li>
+            <li>Fully accessible, parking nearby</li>
+            <li>Connects directly to Glou Glou for two-zone events</li>
+          </ul>
+
+          <div class="acc-sep">Glou Glou and The Atrium combined</div>
+          <p class="acc-note">Use both spaces together. Welcome guests into the bar, move through to The Atrium for dinner. Two rooms, one seamless night. Cocktail hour to full celebration.</p>
+
+          <div class="acc-sep">Best for</div>
+          <ul class="acc-features">
+            <li>Large corporate end-of-year functions</li>
+            <li>Gala dinners and award evenings</li>
+            <li>Weddings and milestone celebrations</li>
+            <li>Conference networking and launch events</li>
+          </ul>
+
+          <div class="acc-callout" style="margin-top:24px;">
+            <div>
+              <strong>Interested in The Atrium?</strong>
+              <span>Tell us your date, guest count, and format. We'll put together a proposal.</span>
+            </div>
+            <a href="#enquire" class="btn-enquire-sm">Enquire</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── PENTHOUSE ── -->
+      <div class="acc-item" id="acc-ph">
+        <button class="acc-btn" aria-expanded="false" aria-controls="acc-ph-body">
+          <div class="acc-btn-left">
+            <span class="acc-btn-cap">03 · Partner venue · 6 to 50 guests</span>
+            <span class="acc-btn-title">The Penthouse</span>
+          </div>
+          <span class="acc-icon">+</span>
+        </button>
+        <div class="acc-body" id="acc-ph-body">
+
+          <img src="./Images/penthouse.png" alt="The Penthouse" class="acc-banner" style="object-position: center 55%;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px; margin-top:4px; margin-bottom:32px;">
+            <img src="./Images/penthouse-dining.png" alt="Penthouse dining" style="width:100%; height:180px; object-fit:cover; object-position:center 40%; display:block;">
+            <img src="./Images/penthouse-terrace.png" alt="Penthouse terrace" style="width:100%; height:180px; object-fit:cover; object-position:center 50%; display:block;">
+          </div>
+
+          <div class="acc-pkg-heading">Hosted wine experiences, 6 to 20 guests</div>
+          <div class="acc-pkg-grid">
+            <div class="acc-pkg">
+              <div class="acc-pkg-name">The Tasting</div>
+              <div class="acc-pkg-dur">1.5 hours</div>
+              <ul class="acc-pkg-list">
+                <li>3 curated wines</li>
+                <li>Matched snacks</li>
+                <li>Hosted throughout</li>
+              </ul>
+            </div>
+            <div class="acc-pkg featured">
+              <div class="acc-pkg-name">The Dinner</div>
+              <div class="acc-pkg-dur">2.5 hours</div>
+              <ul class="acc-pkg-list">
+                <li>4 wines</li>
+                <li>3-course dinner</li>
+                <li>Hosted throughout</li>
+              </ul>
+            </div>
+            <div class="acc-pkg">
+              <div class="acc-pkg-name">The Long Table</div>
+              <div class="acc-pkg-dur">3.5 hours</div>
+              <ul class="acc-pkg-list">
+                <li>5 wines</li>
+                <li>5-course dinner</li>
+                <li>Hosted throughout</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-addon">
+            <div class="acc-addon-label">Add a canapé hour</div>
+            <div class="acc-addon-desc">Arrive, pour, graze. A relaxed opening before the main event begins.</div>
+          </div>
+
+          <div class="acc-pkg-heading">Snacks and drinks, 6 to 50 guests</div>
+          <div class="acc-dur-grid">
+            <div class="acc-dur-card">
+              <div class="acc-dur-time">1.5 hrs</div>
+              <div class="acc-dur-label">Standing social</div>
+            </div>
+            <div class="acc-dur-card">
+              <div class="acc-dur-time">2.5 hrs</div>
+              <div class="acc-dur-label">Extended evening</div>
+            </div>
+            <div class="acc-dur-card">
+              <div class="acc-dur-time">4 hrs</div>
+              <div class="acc-dur-label">Full event</div>
+            </div>
+          </div>
+          <p class="acc-note">Drinks, snacks, and good company. Relaxed and standing. Works as a full evening or the opening act to something more.</p>
+
+          <div class="acc-callout" style="margin-top:24px;">
+            <div>
+              <strong>Venue hire</strong>
+              <span>The Penthouse is exclusively yours for the duration of your event. Overnight rates available on request.</span>
+            </div>
+            <a href="#enquire" class="btn-enquire-sm">Get a quote</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOD -->
+<section class="food">
+  <div class="container">
+    <div class="food-header">
+      <span class="eyebrow">The food</span>
+      <h2>What's on the table.</h2>
+      <p>Our kitchen handles everything. From casual canapes to a full sharing spread. All made in-house, all tailored to your event.</p>
+    </div>
+
+    <div class="food-cols">
+
+      <div>
+        <div class="food-col-label">Sharing plates</div>
+        <div class="food-items">
+          <div class="food-item">
+            <div class="food-item-name">Marinated Olives <span class="food-item-tags"><span class="food-tag">VG, GF</span></span></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Sweet &amp; Spicy Popcorn <span class="food-item-tags"><span class="food-tag">VG, GF</span></span></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Cheese &amp; Biscuits <span class="food-item-tags"><span class="food-tag">V, GF*</span></span></div>
+            <div class="food-item-desc">Two cheese, apple chutney, quince paste, crackers &amp; oat cakes</div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Breads &amp; Dips <span class="food-item-tags"><span class="food-tag">GF*, V*</span></span></div>
+            <div class="food-item-desc">Spiced pumpkin, smoked salmon mousse, duck liver pate, toasted sourdough</div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Fries <span class="food-item-tags"><span class="food-tag">GF*, VG*</span></span></div>
+            <div class="food-item-desc">Spicy tomato sauce</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="food-col-label">Canapes &amp; bites</div>
+        <div class="food-col-sub">Minimum 12 pieces per item</div>
+        <div class="food-items">
+          <div class="food-item">
+            <div class="food-item-name">Kedgeree Croquettes <span class="food-item-tags"><span class="food-tag">V*</span></span></div>
+            <div class="food-item-desc">Curry oil</div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Gildas <span class="food-item-tags"><span class="food-tag">V*, VG*, GF</span></span></div>
+            <div class="food-item-desc">White &amp; brown anchovy, marinated olive, pickled onion, pickled chilli</div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Smoked Salmon Mousse Crostini <span class="food-item-tags"><span class="food-tag">GF*</span></span></div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Mushroom Arancini <span class="food-item-tags"><span class="food-tag">GF*, V, VG*</span></span></div>
+            <div class="food-item-desc">Truffle mayonnaise</div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Smoked Warehou Beignets</div>
+            <div class="food-item-desc">Leek &amp; chive dip</div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Loaded Potato Skins <span class="food-item-tags"><span class="food-tag">GF*, V*</span></span></div>
+            <div class="food-item-desc">Chive crème fraiche, pancetta crumb</div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Piedmontese Peppers <span class="food-item-tags"><span class="food-tag">GF, V*, VG*</span></span></div>
+            <div class="food-item-desc">Cherry tomato, buffalo mozzarella, basil</div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Chicken &amp; Tarragon Vol au Vents</div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Roast Pork Belly Sliders <span class="food-item-tags"><span class="food-tag">GF*, VG*</span></span></div>
+            <div class="food-item-desc">Quince, apple chutney</div>
+          </div>
+          <div class="food-item">
+            <div class="food-item-name">Fish Goujons</div>
+            <div class="food-item-desc">Tartare sauce</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="food-note">
+      We offer a variety of food, including options for common allergens. If you have a food allergy please notify our team when you enquire.<br>
+      V vegetarian &nbsp;·&nbsp; VG vegan &nbsp;·&nbsp; GF gluten-free &nbsp;·&nbsp; N contains nuts &nbsp;·&nbsp; DF dairy free &nbsp;·&nbsp; *on request
+    </div>
+  </div>
+</section>
+
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="container">
+    <span class="eyebrow">How it works</span>
+    <h2>Four steps. That's it.</h2>
+    <p class="process-sub">From first message to the night itself.</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-n">1</div>
+        <div class="step-title">Tell us about your event</div>
+        <div class="step-desc">Fill in the form below. Guest count, date, type of event. That's enough to start.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-n">2</div>
+        <div class="step-title">We're in touch within 24 hours</div>
+        <div class="step-desc">A real person, not a bot. We confirm availability and ask anything we need.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-n">3</div>
+        <div class="step-title">Receive a tailored proposal</div>
+        <div class="step-desc">Specific to your event, your group, and your budget. Package and inclusions in one document.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-n">4</div>
+        <div class="step-title">Confirm and leave it with us</div>
+        <div class="step-desc">You confirm, we handle everything. Show up on the night. That's it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <h2>Good questions</h2>
+    <div class="faq-wrap">
+
+      <div class="faq-item">
+        <button class="faq-q">What's the minimum group size?</button>
+        <div class="faq-a">The Penthouse suits groups from 6 to 50. Glou Glou works well from around 30 guests (minimum spend applies). The Atrium is best from 50 upward. Not sure which space fits? Just ask and we'll help you figure it out.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">How does pricing work?</button>
+        <div class="faq-a">Every event is a little different, so we build packages tailored to your group, date, and what you need. Enquire with the form below and we'll come back with a proposal that fits your budget.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Do you handle the food and drink, or do we bring our own?</button>
+        <div class="faq-a">We handle everything. Food and beverage is provided by our kitchen across all three spaces.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Can we view the spaces before booking?</button>
+        <div class="faq-a">Absolutely. Get in touch and we'll arrange a walk-through at a time that suits you.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">How far ahead do I need to book?</button>
+        <div class="faq-a">The earlier the better. November and December book out fast, so if you have a date in mind, reach out as soon as possible. That said, get in touch regardless and we'll let you know what's available.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Are you fully licensed?</button>
+        <div class="faq-a">Yes. Glou Glou is fully licensed. All events are operated in accordance with the Sale and Supply of Alcohol Act 2012.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Can you cater for dietary requirements?</button>
+        <div class="faq-a">Yes. Our kitchen accommodates vegetarian, vegan, gluten-free, and common allergies. Please include details when you enquire and we'll confirm what's possible for your event.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Where are you and is there parking?</button>
+        <div class="faq-a">17A Allen Street, The Exchange, Te Aro, Wellington. Between Allen and Blair Streets, in the Courtenay Precinct. Street parking and public transport are both close by. The venue is fully accessible.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ENQUIRY FORM -->
+<section class="enquire" id="enquire">
+  <div class="container">
+    <div class="enquire-header">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Tell us about your event</h2>
+      <p>We'll come back to you within 24 hours with a tailored proposal.</p>
+    </div>
+
+    <div id="form-wrap">
+      <form name="glou-glou-events" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="event-form">
+        <input type="hidden" name="form-name" value="glou-glou-events">
+        <div style="display:none"><input name="bot-field"></div>
+
+        <div class="fg">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+        </div>
+
+        <div class="fg">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="fg">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="021 000 0000">
+        </div>
+
+        <div class="fg">
+          <label for="space">Which space?</label>
+          <select id="space" name="space" required>
+            <option value="" disabled selected>Select a space</option>
+            <option value="glou-glou">Glou Glou (up to 70 guests)</option>
+            <option value="penthouse">The Penthouse (6 to 50 guests)</option>
+            <option value="atrium">The Atrium (up to 300 guests)</option>
+            <option value="combo">Glou Glou and The Atrium combined</option>
+            <option value="not-sure">Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="fg">
+          <label for="guests">Approximate guest count</label>
+          <input type="number" id="guests" name="guests" placeholder="e.g. 24" min="1">
+        </div>
+
+        <div class="fg">
+          <label for="event-date">Event date (if known)</label>
+          <input type="date" id="event-date" name="event-date">
+        </div>
+
+        <div class="fg full">
+          <label for="event-type">Type of event</label>
+          <input type="text" id="event-type" name="event-type" placeholder="e.g. End-of-year function, milestone birthday, product launch...">
+        </div>
+
+        <div class="fg full">
+          <label for="message">Anything else we should know?</label>
+          <textarea id="message" name="message" placeholder="Budget, timing, anything specific. The more context you give us, the better the proposal we can put together."></textarea>
+        </div>
+
+        <div class="form-cta">
+          <button type="submit" class="btn-submit">Send enquiry</button>
+        </div>
+
+        <p class="form-note">Or email us: <a href="mailto:hello@glouglou.nz">hello@glouglou.nz</a></p>
+      </form>
+    </div>
+
+    <div id="form-success">
+      <h3>We've got it.</h3>
+      <p>Thanks for getting in touch. We'll be back to you within 24 hours.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Glou Glou</div>
+  <div>17A Allen Street, The Exchange, Te Aro, Wellington 6011</div>
+  <div class="footer-links">
+    <a href="https://www.glouglou.nz">Main website</a>
+    <a href="mailto:hello@glouglou.nz">hello@glouglou.nz</a>
+    <a href="https://instagram.com/glouglou.nz" target="_blank" rel="noopener">Instagram</a>
+    <a href="#enquire">Enquire now</a>
+  </div>
+  <div style="margin-top:16px; font-size:12px; opacity:0.35;">© 2026 Glou Glou · All rights reserved</div>
+</footer>
+
+
+<!-- Mobile sticky CTA -->
+<div class="sticky-cta" id="sticky">
+  <a href="#enquire">Tell us about your event &rsaquo;</a>
+</div>
+
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('main-nav');
+  const sticky = document.getElementById('sticky');
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 80);
+    const enquire = document.getElementById('enquire');
+    if (enquire) sticky.style.display = enquire.getBoundingClientRect().top <= window.innerHeight ? 'none' : 'block';
+  }, { passive: true });
+
+  // Accordion — each panel toggles independently
+  document.querySelectorAll('.acc-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.acc-item');
+      const isOpen = item.classList.contains('open');
+      item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Form (Netlify)
+  const form = document.getElementById('event-form');
+  const formWrap = document.getElementById('form-wrap');
+  const formSuccess = document.getElementById('form-success');
+
+  if (form) {
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const btn = form.querySelector('.btn-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        });
+        formWrap.style.display = 'none';
+        formSuccess.style.display = 'block';
+      } catch {
+        window.location.href = 'mailto:hello@glouglou.nz?subject=Private Event Enquiry';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
