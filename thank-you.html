@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Private Events at Glou Glou</title>
+  <meta name="description" content="Thanks for your enquiry. Glou Glou will be in touch within two working days.">
+  <meta name="robots" content="noindex">
+
+  <style>
+    @font-face {
+      font-family: 'Alti';
+      src: url('./Alti-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Galvji';
+      src: url('./galvji.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    :root {
+      --navy: #0D233B;
+      --navy-deep: #081829;
+      --cream: #EAE2CD;
+      --white: #FFFFFF;
+      --serif: 'Alti', Georgia, 'Times New Roman', serif;
+      --sans: 'Galvji', system-ui, -apple-system, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--white);
+      background: var(--navy-deep);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    h1, h2 { font-family: var(--serif); font-weight: 400; line-height: 1.15; }
+    a { color: inherit; }
+
+    .nav {
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo { text-decoration: none; color: var(--white); }
+    .nav-logo-name { font-family: var(--serif); font-size: 20px; display: block; letter-spacing: 0.04em; }
+    .nav-logo-sub { font-family: var(--sans); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.55; display: block; margin-top: -2px; }
+
+    .wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px 100px;
+    }
+    .inner { max-width: 520px; }
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      display: block;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(34px, 5vw, 52px);
+      margin-bottom: 20px;
+    }
+    .lead {
+      font-size: 17px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 40px;
+    }
+    .btn-white {
+      display: inline-block;
+      background: var(--white);
+      color: var(--navy);
+      padding: 15px 38px;
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 1px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-white:hover { background: var(--cream); transform: translateY(-2px); }
+    .secondary-link {
+      display: block;
+      margin-top: 24px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      text-decoration: underline;
+    }
+
+    footer {
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="https://www.glouglou.nz" class="nav-logo">
+      <span class="nav-logo-name">Glou Glou</span>
+      <span class="nav-logo-sub">Private Events</span>
+    </a>
+  </nav>
+
+  <div class="wrap">
+    <div class="inner">
+      <span class="eyebrow">Enquiry received</span>
+      <h1>We've got it.</h1>
+      <p class="lead">Thanks for telling us about your event. We'll be back to you within two working days with a tailored proposal.</p>
+      <a href="https://www.glouglou.nz" class="btn-white">Back to Glou Glou</a>
+      <a href="/" class="secondary-link">Return to the events page</a>
+    </div>
+  </div>
+
+  <footer>
+    17A Allen Street, The Exchange, Te Aro, Wellington 6011
+  </footer>
+
+</body>
+</html>
