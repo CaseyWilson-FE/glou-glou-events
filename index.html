@@ -592,9 +592,6 @@
     .btn-submit:hover { background: var(--cream); transform: translateY(-2px); }
     .form-note { grid-column: 1 / -1; text-align: center; font-size: 13px; color: rgba(255,255,255,0.3); margin-top: 12px; }
     .form-note a { color: rgba(255,255,255,0.5); text-decoration: underline; }
-    #form-success { display: none; text-align: center; padding: 52px 24px; }
-    #form-success h3 { font-size: 34px; margin-bottom: 12px; }
-    #form-success p { font-size: 17px; color: rgba(255,255,255,0.6); }
     /* FOOTER */
     footer {
       background: #111;
@@ -1170,12 +1167,7 @@
         <div class="form-cta">
           <button type="submit" class="btn-submit">Send enquiry</button>
         </div>
-        <p class="form-note">Or email us: <a href="mailto:hello@glouglou.nz">hello@glouglou.nz</a></p>
       </form>
-    </div>
-    <div id="form-success">
-      <h3>We've got it.</h3>
-      <p>Thanks for getting in touch. We'll be back to you within two working days.</p>
     </div>
   </div>
 </section>
@@ -1186,7 +1178,6 @@
   <div>17A Allen Street, The Exchange, Te Aro, Wellington 6011</div>
   <div class="footer-links">
     <a href="https://www.glouglou.nz">Main website</a>
-    <a href="mailto:hello@glouglou.nz">hello@glouglou.nz</a>
     <a href="https://instagram.com/glouglou.nz" target="_blank" rel="noopener">Instagram</a>
     <a href="#enquire">Enquire now</a>
   </div>
@@ -1226,8 +1217,6 @@
   });
 
   const form = document.getElementById('event-form');
-  const formWrap = document.getElementById('form-wrap');
-  const formSuccess = document.getElementById('form-success');
   if (form) {
     form.addEventListener('submit', async e => {
       e.preventDefault();
@@ -1240,8 +1229,7 @@
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams(new FormData(form)).toString()
         });
-        formWrap.style.display = 'none';
-        formSuccess.style.display = 'block';
+        window.location.href = '/thank-you.html';
       } catch {
         window.location.href = 'mailto:hello@glouglou.nz?subject=Private Event Enquiry';
       }
