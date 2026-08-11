@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18382824066"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18382824066');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Private Events &amp; Venue Hire | Glou Glou Wellington</title>
   <meta name="description" content="Private events and venue hire at Glou Glou, Wellington. Three distinct spaces. Intimate wine dinners to 300-guest celebrations in the heart of the Courtenay Precinct.">
-
   <style>
     @font-face {
       font-family: 'Alti';
@@ -655,7 +663,6 @@
   </style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav class="nav" id="main-nav">
   <a href="https://www.glouglou.nz" class="nav-logo">
@@ -664,7 +671,6 @@
   </a>
   <a href="#enquire" class="nav-btn">Enquire now</a>
 </nav>
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
@@ -675,7 +681,6 @@
     <a href="#enquire" class="btn-white">Tell us about your event</a>
   </div>
 </section>
-
 <!-- PAIN / WHY GLOU GLOU -->
 <section class="pain">
   <div class="container">
@@ -697,7 +702,6 @@
     </div>
   </div>
 </section>
-
 <!-- THREE VENUES -->
 <section class="three-venues">
   <div class="container">
@@ -745,7 +749,6 @@
     </div>
   </div>
 </section>
-
 <!-- PHOTO GALLERY -->
 <section class="gallery">
   <div class="gallery-grid">
@@ -757,7 +760,6 @@
     <div class="g-photo g6" style="background-image: url('./interior-dining.jpg');"></div>
   </div>
 </section>
-
 <!-- ACCORDION / CHOOSE YOUR SPACE -->
 <section class="offerings">
   <div class="container">
@@ -767,7 +769,6 @@
       <p>Each venue has its own format and inclusions. Expand any space below to see what's available, then enquire and we'll put together a package for your group.</p>
     </div>
     <div class="acc-wrap">
-
       <!-- GLOU GLOU -->
       <div class="acc-item featured open" id="acc-gg">
         <button class="acc-btn" aria-expanded="true" aria-controls="acc-gg-body">
@@ -819,7 +820,6 @@
           </div>
         </div>
       </div>
-
       <!-- ATRIUM -->
       <div class="acc-item" id="acc-at">
         <button class="acc-btn" aria-expanded="false" aria-controls="acc-at-body">
@@ -877,7 +877,6 @@
           </div>
         </div>
       </div>
-
       <!-- PENTHOUSE -->
       <div class="acc-item" id="acc-ph">
         <button class="acc-btn" aria-expanded="false" aria-controls="acc-ph-body">
@@ -952,11 +951,9 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
-
 <!-- FOOD -->
 <section class="food">
   <div class="container">
@@ -1040,7 +1037,6 @@
     </div>
   </div>
 </section>
-
 <!-- HOW IT WORKS -->
 <section class="process">
   <div class="container">
@@ -1071,7 +1067,6 @@
     </div>
   </div>
 </section>
-
 <!-- FAQ -->
 <section class="faq">
   <div class="container">
@@ -1112,7 +1107,6 @@
     </div>
   </div>
 </section>
-
 <!-- ENQUIRY FORM -->
 <section class="enquire" id="enquire">
   <div class="container">
@@ -1171,7 +1165,6 @@
     </div>
   </div>
 </section>
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-name">Glou Glou</div>
@@ -1183,12 +1176,10 @@
   </div>
   <div style="margin-top:16px; font-size:12px; opacity:0.35;">© 2026 Glou Glou · All rights reserved</div>
 </footer>
-
 <!-- Mobile sticky CTA -->
 <div class="sticky-cta" id="sticky">
   <a href="#enquire">Tell us about your event &rsaquo;</a>
 </div>
-
 <script>
   const nav = document.getElementById('main-nav');
   const sticky = document.getElementById('sticky');
@@ -1197,7 +1188,6 @@
     const enquire = document.getElementById('enquire');
     if (enquire) sticky.style.display = enquire.getBoundingClientRect().top <= window.innerHeight ? 'none' : 'block';
   }, { passive: true });
-
   document.querySelectorAll('.acc-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.acc-item');
@@ -1206,7 +1196,6 @@
       btn.setAttribute('aria-expanded', String(!isOpen));
     });
   });
-
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
@@ -1215,7 +1204,6 @@
       if (!isOpen) item.classList.add('open');
     });
   });
-
   const form = document.getElementById('event-form');
   if (form) {
     form.addEventListener('submit', async e => {
